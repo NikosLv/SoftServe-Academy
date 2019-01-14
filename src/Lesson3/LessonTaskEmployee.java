@@ -5,7 +5,18 @@ class Employee {
 	private String name;
 	private int rate;
 	private int hours;
-	static int totalsum;
+	
+	static int sum;
+
+	
+
+	public static int getSum() {
+		return sum;
+	}
+
+	public static void setSum(int sum) {
+		Employee.sum = sum;
+	}
 
 	public String getName() {
 		return name;
@@ -21,6 +32,7 @@ class Employee {
 
 	public void setRate(int rate) {
 		this.rate = rate;
+	
 	}
 
 	public int getHours() {
@@ -29,21 +41,8 @@ class Employee {
 
 	public void setHours(int hours) {
 		this.hours = hours;
+	
 	}
-
-	public static int getTotalsum() {
-		return totalsum;
-	}
-
-	public static void setTotalsum(int totalsum) {
-		Employee.totalsum = totalsum;
-	}
-
-	// @Override
-	// public String toString() {
-	// return "Employee [name=" + name + ", rate=" + rate + ", hours=" + hours +
-	// "]";
-	// }
 
 	public Employee() {
 	}
@@ -51,7 +50,7 @@ class Employee {
 	@Override
 	public String toString() {
 		return "Employee [name=" + name + ", rate=" + rate + ", hours=" + hours + ", salary=" + salary() + ", bonuses="
-				+ bonuses() + ", totalSalary=" + totalSalary() + "]";
+				+ bonuses() + ", totalSalary=" + totalSum() + "]";
 	}
 
 	public Employee(String name, int rate) {
@@ -63,6 +62,7 @@ class Employee {
 		this.name = name;
 		this.rate = rate;
 		this.hours = hours;
+		sum=sum+totalSum();
 	}
 
 	public int salary() {
@@ -76,18 +76,12 @@ class Employee {
 		return b;
 	}
 
-	public int totalSalary() {
+	public int totalSum() {
 		int t = salary() + bonuses();
 		return t;
 
 	}
 	
-	public int allSalary() {
-		int all = salary() + bonuses();
-		return all;
-
-	}
-
 }
 
 public class LessonTaskEmployee {
@@ -96,13 +90,21 @@ public class LessonTaskEmployee {
 		Employee emp = new Employee("Sem", 25, 35);
 		System.out.println(emp);
 		emp.bonuses();
-		emp.totalSalary();
+		emp.totalSum();
 
 		Employee emp1 = new Employee("Piter", 10, 22);
 		System.out.println(emp1);
 		emp1.bonuses();
-		emp1.totalSalary();
-		emp1.allSalary();
+		emp1.totalSum();
+		
+		Employee emp2 = new Employee("Alex", 12, 25);
+		System.out.println(emp2);
+		emp2.bonuses();
+		emp2.totalSum();
+		
+		
+		System.out.println("Salary of all eployees is: " + Employee.sum);
+	
 
 	}
 

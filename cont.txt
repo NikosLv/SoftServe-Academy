@@ -1,0 +1,36 @@
+package Lesson4;
+
+public enum Continent {
+	ASIA("China", "Japan", "India", "Mongolia"),
+	EUROPE("Ukraine", "France", "Germany", "Polland"),
+	AMERICA("USA", "Canada", "Cuba", "Mexica"),
+	AFRICA("Nigeria", "Egypt", "Livia", "Mali");
+	private final String asia, europe, america, africa;
+	
+	Continent(String asia, String europe, String america, String africa) {
+		this.asia = asia;
+		this.europe = europe;
+		this.america = america;
+		this.africa = africa;
+		}
+	
+	public String getAsia() {
+		return asia;
+		}
+	
+	public String getEurope() {
+		return europe;
+		}
+	
+	public String getAmerica() {
+		return america;
+		}
+	
+	public String getAfrcia() {
+		return africa;
+		}
+	
+
+
+
+}
